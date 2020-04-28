@@ -7,28 +7,28 @@ interface IApiConfig {
 const apiConfig: IApiConfig = {
   testData: [
     {
-      _id: 'profile1',
+      id: '1',
       docType: PROFILE_DOC_TYPE,
       userId: 'user1',
       firstName: 'John',
       lastName: 'Smith'
     },
     {
-      _id: 'profile2',
+      id: '2',
       docType: PROFILE_DOC_TYPE,
       userId: 'user2',
       firstName: 'Susan',
       lastName: 'Kranst'
     },
     {
-      _id: 'widget1',
+      id: '3',
       docType: WIDGET_DOC_TYPE,
       name: 'Surface Saver Supreme',
       price: 999.99,
       availableStock: 104
     },
     {
-      _id: 'widget2',
+      id: '4',
       docType: WIDGET_DOC_TYPE,
       name: 'Perfect Paint Polisher',
       price: 24.99,

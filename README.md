@@ -85,11 +85,11 @@ Since we're developing with TypeScript, it is important for the codes to be tran
 
 # Routes
 
-| Route                        | Description                            |
-| ---------------------------- | -------------------------------------- |
-| GET /                        | Get API status                         |
-| GET /api/profiles            | Get all profiles                       |
-| GET /api/profiles/:profileId | Universal configurations for your app. |
+| Route                        | Description          |
+| ---------------------------- | -------------------- |
+| GET /                        | Get API status       |
+| GET /api/profiles            | Get all profiles     |
+| GET /api/profiles/:profileId | Get a single profile |
 
 # Dependencies
 
