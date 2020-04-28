@@ -128,7 +128,3 @@ Since TypeScript is used, dependencies should be accompanied with their correspo
 | nodemon             | Reload node application on code changes |
 
 To install or update these dependencies you can use `npm install` or `npm update`.
-
-```
-
-```
