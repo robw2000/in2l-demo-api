@@ -1,28 +1,19 @@
-# Mongoose Node.js Express TypeScript application boilerplate with best practices for API development.
+# iN2L Demo API
 
-![image](https://user-images.githubusercontent.com/10678997/57565876-01281b00-73f8-11e9-8d86-911faa4a6c0f.png)
-
-The main purpose of this repository is to show a good end-to-end project setup and workflow for writing a Mongoose Node.js Express code in TypeScript complete with middleware, models, routes, and types.
-
-This example comes with a complete REST API to handle Authentication and CRUD features on Users and their corresponding Profile. You may view the API documentation on the [Wiki](https://github.com/polcham/mongoose-express-ts/wiki).
-
-# Why TypeScript?
-
-While it's true that developing applications on an Untyped language such as **JavaScript**, is easier to learn and is faster to develop, it will undeniably get harder and harder to grasp as the application grows in scale. This in turn, leads to more run-time errors consuming more development hours, as the team gets accustomed to the growing codebase. And this is what this boilerplate hopes to achieve. By using the **TypeScript** standard, you'll have better team and code stability with **Interface Oriented Development**, leading to better standardized codes. TypeScript allows developers to focus more on exposed Interfaces or API, rather than having to know all the code by heart. This makes the codebase easier to maintain with big teams, especially if those teams are composed of developers of different skill levels.
+This is a simple API meant to be easily setup on a developer machine. It is not complicated, it is not meant to be hard to use. There are probably problems in how it is coded. You will be given a task which will require modifying this API. Please familiarize yourself with it before the interview.
 
 # Prerequisites
 
 To build and run this app locally you will need a few things:
 
 - Install [Node.js](https://nodejs.org/en/)
-- Install [VS Code](https://code.visualstudio.com/)
 
 # Getting started
 
 - Clone the repository
 
 ```
-git clone --depth=1 https://github.com/polcham/mongoose-express-ts.git <project_name>
+git clone --depth=1 git@github.com:robw2000/in2l-demo-api.git
 ```
 
 - Install dependencies
@@ -55,66 +46,21 @@ The full folder structure of this app is explained below:
 
 > **Note!** Make sure you have already built the app using `npm run start`
 
-| Name               | Description                                                                                                                                                   |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **config**         | Contains config environment to be used by the config package, such as MongoDB URI, jwtSecret, and etc.                                                        |
-| **dist**           | Contains the distributable (or output) from your TypeScript build                                                                                             |
-| **node_modules**   | Contains all your npm dependencies                                                                                                                            |
-| **REST**           | Contains all API requests to test the routes, used with [REST Client VSCode extension](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) |
-| **src**            | Contains your source code that will be compiled to the dist dir                                                                                               |
-| **src/middleware** | Contains the middlewares to intercept requests                                                                                                                |
-| **src/models**     | Models define Mongoose schemas that will be used in storing and retrieving data from MongoDB                                                                  |
-| **src/routes**     | Routes define the endpoints of your API                                                                                                                       |
-| **src/types**      | Contains all your custom types to better handle type checking with TypeScript                                                                                 |
-| **src/server.ts**  | Entry point to your express app                                                                                                                               |
-| package.json       | File that contains npm dependencies as well as [build scripts](#what-if-a-library-isnt-on-definitelytyped)                                                    |
-| tsconfig.json      | Config settings for compiling server code written in TypeScript                                                                                               |
-| tslint.json        | Config settings for TSLint code style checking                                                                                                                |
-
-### Configuring TypeScript compilation
-
-TypeScript uses the file `tsconfig.json` to adjust project compile options.
-Let's dissect this project's `tsconfig.json`, starting with the `compilerOptions` which details how your project is compiled.
-
-```json
-    "compilerOptions": {
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "target": "es6",
-    "noImplicitAny": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["node_modules/*", "src/types/*"]
-    }
-  }
-```
-
-| `compilerOptions`            | Description                                                                                                                                                |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `"module": "commonjs"`       | The **output** module type (in your `.js` files). Node uses commonjs, so that is what we use                                                               |
-| `"esModuleInterop": true,`   | Allows usage of an alternate module import syntax: `import foo from 'foo';`                                                                                |
-| `"target": "es6"`            | The output language level. Node supports ES6, so we can target that here                                                                                   |
-| `"noImplicitAny": true`      | Enables a stricter setting which throws errors when something has a default `any` value                                                                    |
-| `"moduleResolution": "node"` | TypeScript attempts to mimic Node's module resolution strategy. Read more [here](https://www.typescriptlang.org/docs/handbook/module-resolution.html#node) |
-| `"sourceMap": true`          | We want source maps to be output along side our JavaScript. See the [debugging](#debugging) section                                                        |
-| `"outDir": "dist"`           | Location to output `.js` files after compilation                                                                                                           |
-| `"baseUrl": "."`             | Part of configuring module resolution. See [path mapping section](#installing-dts-files-from-definitelytyped)                                              |
-| `paths: {...}`               | Part of configuring module resolution. See [path mapping section](#installing-dts-files-from-definitelytyped)                                              |
-
-The rest of the file define the TypeScript project context.
-The project context is basically a set of options that determine which files are compiled when the compiler is invoked with a specific `tsconfig.json`.
-In this case, we use the following to define our project context:
-
-```json
-    "include": [
-        "src/**/*"
-    ]
-```
-
-`include` takes an array of glob patterns of files to include in the compilation. This project is fairly simple and all of our .ts files are under the `src` folder.
+| Name                              | Description                                                                                                |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| dist\*\*                          | Contains the distributable (or output) from your TypeScript build                                          |
+| node_modules\*\*                  | Contains all your npm dependencies                                                                         |
+| src\*\*                           | Contains your source code that will be compiled to the dist dir                                            |
+| src/models\*\*                    | Models representing document types in the database                                                         |
+| src/routes\*\*                    | Routes define the endpoints of your API                                                                    |
+| src/types\*\*                     | Contains all your custom types to better handle type checking with TypeScript                              |
+| src/services\*\*                  | Data services supporting the routes                                                                        |
+| src/services/couchbase.service.ts | Database service which provides mock data via get or get all functions                                     |
+| src/config.ts\*\*                 | Config file containing the test data used by CouchbaseService app                                          |
+| src/server.ts\*\*                 | Entry point to your express app                                                                            |
+| package.json                      | File that contains npm dependencies as well as [build scripts](#what-if-a-library-isnt-on-definitelytyped) |
+| tsconfig.json                     | Config settings for compiling server code written in TypeScript                                            |
+| tslint.json                       | Config settings for TSLint code style checking                                                             |
 
 ### Running the build
 
@@ -180,6 +126,7 @@ Since TypeScript is used, dependencies should be accompanied with their correspo
 | @types/gravatar     | DefinitelyTyped for gravatar            |
 | @types/jsonwebtoken | DefinitelyTyped for jsonwebtoken        |
 | @types/mongoose     | DefinitelyTyped for mongoose            |
+| @types/node         | DefinitelyTyped for node                |
 | concurrently        | Run multiple commands concurrently      |
 | nodemon             | Reload node application on code changes |
 
