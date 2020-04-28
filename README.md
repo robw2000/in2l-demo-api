@@ -104,10 +104,8 @@ In that file you'll find two sections:
 | config            | Universal configurations for your app.          |
 | express           | Node.js web framework.                          |
 | express-validator | Easy form validation for Express.               |
-| gravatar          | Generate Gravatar URLs based on gravatar specs. |
 | http-status-codes | HTTP status codes constants.                    |
 | jsonwebtoken      | JsonWebToken implementation for Node.js.        |
-| mongoose          | MongoDB modeling tool in an async environment.  |
 | request           | Simplified HTTP client for Node.js.             |
 | typescript        | Typed superset of JavaScript.                   |
 
@@ -120,9 +118,7 @@ Since TypeScript is used, dependencies should be accompanied with their correspo
 | @types/bcryptjs     | DefinitelyTyped for bcryptjs            |
 | @types/config       | DefinitelyTyped for config              |
 | @types/express      | DefinitelyTyped for express             |
-| @types/gravatar     | DefinitelyTyped for gravatar            |
 | @types/jsonwebtoken | DefinitelyTyped for jsonwebtoken        |
-| @types/mongoose     | DefinitelyTyped for mongoose            |
 | @types/node         | DefinitelyTyped for node                |
 | concurrently        | Run multiple commands concurrently      |
 | nodemon             | Reload node application on code changes |
