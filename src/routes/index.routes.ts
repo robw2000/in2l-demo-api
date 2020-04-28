@@ -3,9 +3,8 @@ import Request from '../types/request.type';
 
 const indexRouter: Router = Router();
 
-// @route   GET api/
-// @desc    Get current user's profile
-// @access  Private
+// @route   GET /
+// @desc    API Status
 indexRouter.get('/', async (req: Request, res: Response) => {
   res.send('Demo API Status: OK');
 });

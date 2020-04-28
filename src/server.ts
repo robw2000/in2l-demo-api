@@ -1,19 +1,19 @@
 import bodyParser from 'body-parser';
 import express from 'express';
+import cors from 'cors';
 
 import { profileRouter } from './routes/api/profile.routes';
 import { indexRouter } from './routes/index.routes';
 
 const app = express();
 
+app.use(cors());
+
 // Express configuration
 app.set('port', process.env.PORT || 5000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// @route   GET /
-// @desc    Test Base API
-// @access  Public
 app.get('/', indexRouter);
 
 app.use('/api/profiles', profileRouter);
