@@ -83,16 +83,13 @@ Below is a list of all the scripts this template has available:
 
 Since we're developing with TypeScript, it is important for the codes to be transpiled first to JavaScript before running the node server. It is best to deploy the app using: `npm run server` or `npm run start` command.
 
-### VSCode Extensions
+# Routes
 
-To enhance your development experience while working in VSCode, I provided you with a list of suggested extensions while working on this project:
-
-- [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
-- [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
-- [index-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
-- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+| Route                        | Description                            |
+| ---------------------------- | -------------------------------------- |
+| GET /                        | Get API status                         |
+| GET /api/profiles            | Get all profiles                       |
+| GET /api/profiles/:profileId | Universal configurations for your app. |
 
 # Dependencies
 
@@ -131,3 +128,7 @@ Since TypeScript is used, dependencies should be accompanied with their correspo
 | nodemon             | Reload node application on code changes |
 
 To install or update these dependencies you can use `npm install` or `npm update`.
+
+```
+
+```
