@@ -21,11 +21,17 @@ export class CouchbaseService {
     });
   }
 
-  getAllByType(docType: string): Promise<(IProfile | IWidget)[]> {
+  getAllByType(docType: string, filterByField?: string, filterByValue?: string): Promise<(IProfile | IWidget)[]> {
     return new Promise((resolve, reject) => {
       try {
         const items = apiConfig.testData.filter(
-          item => item.docType === docType
+          item => {
+            if (!filterByField || !filterByValue || !(<any>item)[filterByField]) {
+              return item.docType === docType;
+            }
+
+            return item.docType === docType && ((<any>item)[filterByField] || '').includes(filterByValue);
+          }
         );
 
         if (items && items.length) {
