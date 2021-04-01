@@ -10,7 +10,7 @@
     "test": "jest",
     "deploy": "node dist/server.js",
     "watch-deploy": "nodemon dist/server.js",
-    "server": "concurrently \"npm run watch-tsc\" \"npm run watch-deploy\"",
+    "server": "tsc && concurrently \"npm run watch-tsc\" \"npm run watch-deploy\"",
     "start": "npm run deploy"
   },
   "dependencies": {
