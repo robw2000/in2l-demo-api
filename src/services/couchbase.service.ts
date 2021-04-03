@@ -8,8 +8,7 @@ export class CouchbaseService {
   get(id: string): Promise<IProfile | IWidget> {
     return new Promise((resolve, reject) => {
       try {
-        const item = apiConfig.testData.find(item => item.id === id);
-
+        const item: IProfile | IWidget = apiConfig.testData.find(item => item.id === id);
         if (item) {
           resolve(item);
         } else {

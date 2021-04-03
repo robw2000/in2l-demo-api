@@ -27,9 +27,9 @@ profileRouter.get('', async (req: Request, res: Response) => {
 
 // @route   GET api/profiles/:profileId
 // @desc    Get a profile document
-profileRouter.get('/:profileId', async (req: Request, res: Response) => {
+profileRouter.get('/:id', async (req: Request, res: Response) => {
   try {
-    const item = await service.get(req.params.profileId);
+    const item = await service.get(req.params.id);
     const profile: Profile = <Profile>ModelFactory.create(item);
     res.json(profile);
   } catch (err) {

@@ -4,6 +4,7 @@ import cors from 'cors';
 
 import { profileRouter } from './routes/api/profile.routes';
 import { indexRouter } from './routes/index.routes';
+import { widgetRouter } from './routes/api/widgets.routes';
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/', indexRouter);
 
 app.use('/api/profiles', profileRouter);
+app.use('/api/widgets', widgetRouter);
 
 const port = app.get('port');
 const server = app.listen(port, () =>
