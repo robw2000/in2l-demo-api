@@ -25,14 +25,22 @@ const apiConfig: IApiConfig = {
       docType: PROFILE_DOC_TYPE,
       userId: 'user1',
       firstName: 'John',
-      lastName: 'Smith'
+      lastName: 'Smith',
+      roles: [
+        'user'
+      ],
+      password: ''
     },
     {
       id: '2',
       docType: PROFILE_DOC_TYPE,
       userId: 'user2',
       firstName: 'Susan',
-      lastName: 'Kranst'
+      lastName: 'Kranst',
+      roles: [
+        'user'
+      ],
+      password: ''
     },
     {
       id: '3',
@@ -74,7 +82,23 @@ const apiConfig: IApiConfig = {
       docType: PROFILE_DOC_TYPE,
       userId: 'user3',
       firstName: 'John',
-      lastName: 'Banner'
+      lastName: 'Banner',
+      roles: [
+        'user'
+      ],
+      password: ''
+    },
+    {
+      id: '99',
+      docType: PROFILE_DOC_TYPE,
+      userId: 'user99',
+      firstName: 'John',
+      lastName: 'Banner',
+      roles: [
+        'admin',
+        'user'
+      ],
+      password: '$2a$10$dBU1NiPzHNjU/rrWcwRaQOmV8VhWHi0nii9XSbzFpReQLLBjD22U.'
     }
   ]
 };
