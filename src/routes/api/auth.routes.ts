@@ -11,8 +11,8 @@ import payload from 'payload.type';
 const authRouter: Router = Router();
 const service: CouchbaseService = new CouchbaseService();
 
-// @route   GET api/profiles
-// @desc    Get a profile document
+// @route   POST auth/login
+// @desc    exchange a username/password for a JWT
 authRouter.post('/login', async (req: Request, res: Response) => {
   const inputs = <payload>req.body;
   try {

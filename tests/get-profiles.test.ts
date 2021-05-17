@@ -1,5 +1,6 @@
 import request from 'supertest';
 import app from '../src/server';
+import dotenv from 'dotenv';
 
 describe('Get Profiles', () => {
   afterAll(done => {
@@ -20,9 +21,10 @@ describe('Get Profiles', () => {
   });
 
   it('should get an array of profiles with proper authentication', async () => {
+    dotenv.config();
     const res = await request(app)
       .get('/api/profiles')
-      .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyOTkiLCJyb2xlcyI6WyJhZG1pbiIsInVzZXIiXSwiaWF0IjoxNjIxMjMyNDE0fQ.RZbuahhKXZgHo1EF-c5LOwt2gwHxSNu4WCVoZDEC2Zs');
+      .set('Authorization', process.env.SAMPLE_JWT);
     expect(res.status).toEqual(200);
   });
 });
