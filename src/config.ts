@@ -93,12 +93,24 @@ const apiConfig: IApiConfig = {
       docType: PROFILE_DOC_TYPE,
       userId: 'user99',
       firstName: 'John',
-      lastName: 'Banner',
+      lastName: 'Doe',
       roles: [
         'admin',
         'user'
       ],
       password: '$2a$10$dBU1NiPzHNjU/rrWcwRaQOmV8VhWHi0nii9XSbzFpReQLLBjD22U.'
+    },
+    {
+      id: '86',
+      docType: PROFILE_DOC_TYPE,
+      userId: 'agent86',
+      firstName: 'Maxwell',
+      lastName: 'Smart',
+      roles: [
+        'admin',
+        'user'
+      ],
+      password: '$2a$10$dBU1NiPzHNjU/rrWcwRaQOzcz5VXxjA0eSDKWQSzilSiS8K.pGPrq'
     }
   ]
 };
